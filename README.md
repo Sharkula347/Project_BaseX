@@ -31,4 +31,4 @@ So, outer text will be longer by 1/3 than input sequence
 
 ## This software was developed for educational purposes
 
-Python have built-in module "base64". that works only with Base16, Base32, Base64, Base85
+Python have built-in module "base64". that works with Base16, Base32, Base64, Base85 only.
