@@ -11,4 +11,19 @@ This project provides module with functions for encoding binary data to printabl
 
 5. Enjoy in use.
 
-### This software was developed for educational purposes
+## Details
+Programming language: Python 3.9
+
+The length of outer text depends on the length of choosen alphabet. You can predict % of growing size by following formula:
+
+`% = 8/log[2](N) - 1`, where N - length of choosen alphabet, 8 - bits in byte.
+
+### Example
+
+For Base64 we have:
+
+`% = 8/log[2](64) - 1 = 8/6 = 1/3`
+
+So, outer text will be longer by 1/3 than input sequence
+
+## This software was developed for educational purposes
