@@ -3,7 +3,7 @@ This project provides module with functions for encoding binary data to printabl
 
 ## How to work via module
 1. Make shure that you have installed Python 3.9
-2. Make shure that you have installed modules that listed in reqirements.txt (use `pip install -r [PATH_TO_FILE]/requirements.txt`)
+2. Make shure that you have installed modules that listed in requirements.txt (use `pip install -r [PATH_TO_FILE]/requirements.txt` to get the modules)
 4. Run a console
 5. Type next command:
 
