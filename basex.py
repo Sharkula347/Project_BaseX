@@ -4,13 +4,13 @@ Project_BASEX
 Developed by Kazaryan Maxim, Russia, Rostov-na-Donu, DSTU, VKB43
 '''
 
-BTC_ALPH='123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-RIPPLE_ALPH='rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz'
-MY_ALPH="".join(list(set('ĀāĂăĄąĆćĈĉĊċČčĎď0110ĐđĒēĔĕĖėĘęĚěĜĝĞğ0120ĠġĢģĤĥĦħĨĩĪīĬĭĮį0130İıĲĳĴĵĶķĸĹĺĻļĽľĿ0140ŀŁłŃńŅņŇňŉŊŋŌōŎŏ0150ŐőŒœŔŕŖŗŘřŚśŜŝŞş0160ŠšŢţŤťŦŧŨũŪūŬŭŮů0170ŰűŲųŴŵŶŷŸŹźŻżŽžſ0180ƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏ0190ƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟ')))
-MOI_ALPH="ЛИДНЬ_УАЙХЯБТ"
-BASE32_ALPH="abcdefghijklmnopqrstuvwxyz234567"
-BASE64_ALPH="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-deb=''
+ALPHS={
+"BTC":'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
+"RIPPLE":'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
+"BASE32":"abcdefghijklmnopqrstuvwxyz234567",
+"BASE64":"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+}
+
 class BaseX(object):
     '''Кодирование Base'''
     def __init__(self):
@@ -113,11 +113,3 @@ class BaseX(object):
             debuger=[tmp[i*8:i*8+8] for i in range(l_tmp//8)]
             newpos=[int('0b'+tmp[i*8:i*8+8],2) for i in range(l_tmp//8)]
         return newpos
-
-'''
-mytext2=BaseX.encode(BTC_ALPH,bytes('Чел Хорош!','CP1251'))
-print(mytext2)
-mytext3=BaseX.decode(BTC_ALPH,mytext2,'CP1251')
-print(bytes(mytext3).decode('CP1251'))'''
-#mytext2=BaseX.encode(BASE64_ALPH,bytes('Man','CP1251'))
-#print(mytext2)
