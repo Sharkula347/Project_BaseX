@@ -8,6 +8,7 @@ This project provides module with functions for encoding binary data to printabl
 5. Type next command:
 
 `python o_base.py`
+
 6. Enjoy in use.
 
 ### This software was developed for educational purposes
