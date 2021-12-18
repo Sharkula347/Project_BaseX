@@ -14,7 +14,10 @@ This project provides module with functions for encoding binary data to printabl
 ## Details
 Programming language: Python 3.9
 
-The length of outer text depends on the length of choosen alphabet. You can predict % of growing size by following formula:
+This software can encode all bytes-like objects (for example: files). Also it provides to choose encoding of encoded text and alphabet (from availabe alphabets in module or custom). Encoded file with new encoded name saves in the same dir where placed source file.
+
+## Calculations
+The growing % of outer text depends on the length of choosen alphabet. You can predict % of growing size by following formula:
 
 `% = 8/log[2](N) - 1`, where N - length of choosen alphabet, 8 - bits in byte.
 
