@@ -5,10 +5,12 @@ Developed by Kazaryan Maxim, Russia, Rostov-na-Donu, DSTU, VKB43
 '''
 
 ALPHS={
-"BTC":'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
-"RIPPLE":'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
+"BASE16":"0123456789ABCDEF",
 "BASE32":"abcdefghijklmnopqrstuvwxyz234567",
-"BASE64":"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+"BASE58(BTC)":'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
+"BASE58(RIPPLE)":'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
+"BASE64":"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+"BASE85":"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~"
 }
 
 class BaseX(object):
