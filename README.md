@@ -8,3 +8,4 @@ This project provides module with functions for encoding binary data to printabl
 5. Type next command:
 
 `----------`
+### This software was developed for educational purposes
