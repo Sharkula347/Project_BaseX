@@ -130,10 +130,13 @@ def fmodify(event):
             elif numb>127:
                 encoding='utf-8'
     if selected.get()==0:
-        newname=BaseX.encode(CURRALPH(),bytes(name,encoding))
+        if combo2['state'] == 'normal':
+            newname=name+"."+combo2.get()
+        else:
+            newname=name+"."+"CUSTOM"
         newbtss=bytes(BaseX.encode(CURRALPH(),btss),encoding)
     elif selected.get()==1:
-        newname=bytes(BaseX.decode(CURRALPH(),name,encoding)).decode(encoding)
+        newname=name+"_decoded"
         print(newname)
         newbtss=BaseX.decode(CURRALPH(),btss.decode(encoding),encoding)
     file=open(newname,'wb')
@@ -157,9 +160,26 @@ def CURRALPH():
     if txt['state'] == 'normal':
         return txt.get()
 
+def have_repeats(lst):
+    c=1
+    while c!=0:
+        c=len(lst)
+        lst=[i for i in list(map(lambda x:x^lst[0],lst)) if i!=0]
+        c -=len(lst)
+        if c>1:
+            return True
+    return False
+
+def check_valid_text(event):
+    lst=[ord(i) for i in txt.get()]
+    if have_repeats(lst):
+        txt['fg']="red"
+    else:
+        txt['fg']="black"
+    
 window=Tr.Tk()
 window.title('Программа для кодирования файлов')
-window.geometry('320x240')
+window.geometry('320x210')
 
 lblr = Tr.Label(window, text="Кодировка:")  
 lblr.grid(column=1, row=0, columnspan=2)
@@ -207,5 +227,6 @@ rad2_1.bind('<Button-1>',lambda x:radio_swithced(x,1))
 txt = Tr.Entry(window,width=23)  
 txt.grid(column=0, row=8, columnspan=2)
 txt['state'] = 'disabled'
-
+txt.bind('<KeyRelease>',lambda x:check_valid_text(x))
+txt_inp=[]
 window.mainloop()

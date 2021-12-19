@@ -6,7 +6,7 @@ Developed by Kazaryan Maxim, Russia, Rostov-na-Donu, DSTU, VKB43
 
 ALPHS={
 "BASE16":"0123456789ABCDEF",
-"BASE32":"abcdefghijklmnopqrstuvwxyz234567",
+"BASE32":"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
 "BASE58(BTC)":'123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
 "BASE58(RIPPLE)":'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
 "BASE64":"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
@@ -56,7 +56,7 @@ class BaseX(object):
             lpos=-1
             cnt_bytes=[]
             while is_zero_byte:
-                if (text_o[lpos-1]!=0) and (text_o[lpos]==0):
+                if (text_o[lpos-1]!=0) and (text_o[lpos]==0) or (text_o[lpos]!=0):
                     is_zero_byte=0
                 else:
                     text_o.pop()
@@ -67,7 +67,7 @@ class BaseX(object):
         return newpos
 
     def decode(kb,text,code='UTF-8'):
-        '''Раскодировать'''
+        '''Декодировать'''
         for i in text:
             if (i not in kb) and (i!='='):
                 warnings.warn('Обнаружено несоответствие закодированного текста и алфавита кодировки. Операция будет отменена!', category=BytesWarning, stacklevel=1, source=None)
